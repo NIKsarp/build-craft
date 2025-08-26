@@ -1,0 +1,11 @@
+export { Header } from "@/components/Header/Header.jsx";
+export { Footer } from "@/components/Footer/Footer.jsx";
+export { About } from "@/components/About/About.jsx";
+export { Blog } from "@/components/Blog/Blog.jsx";
+export { Hero } from "@/components/Hero/Hero.jsx";
+export { Portfolio } from "@/components/Portfolio/Portfolio.jsx";
+export { Testimonials } from "@/components/Testimonials/Testimonials.jsx";
+export { Contact } from "@/components/Contact/Contact.jsx";
+export { Services } from "@/components/Services/Services.jsx";
+export { NotFoundPage } from "@/components/NotFoundPage/NotFoundPage.jsx";
+// export { Toaster } from "@/components/Toaster/Toaster.jsx";
