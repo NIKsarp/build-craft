@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { useTheme } from "@/contexts/ThemeContextProvider";
 
 export const Footer = () => {
   const services = [
@@ -85,8 +86,13 @@ export const Footer = () => {
     },
   ];
 
+  const { theme } = useTheme();
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-black/40 backdrop-blur-lg border-t border-white/10 bg-blue-950">
+    <footer
+      className={`${theme} dark:bg-black bg-black/40 backdrop-blur-lg border-t border-white/10 bg-blue-950`}
+    >
       <div className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-6">
@@ -247,7 +253,7 @@ export const Footer = () => {
         <div className="border-t border-white/10 mt-12 pt-8 text-center">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-300">
-              © 2024 BuildCraft Solutions. All rights reserved.
+              © {currentYear} BuildCraft Solutions. All rights reserved.
             </p>
             <div className="flex space-x-6">
               <NavLink
