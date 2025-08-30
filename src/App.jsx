@@ -5,10 +5,10 @@ import {
   RouterProvider,
 } from "react-router";
 
-import { Layout } from "./pages/Layout.jsx";
-import { Home } from "./pages/Home.jsx";
-import { NotFoundPage } from "./components/NotFoundPage/NotFoundPage.jsx";
-import { ThemeContextProvider } from "./contexts/ThemeContextProvider.jsx";
+import { Layout } from "@/pages/Layout.jsx";
+import { Home } from "@/pages/Home.jsx";
+import { NotFoundPage } from "@/components/NotFoundPage/NotFoundPage.jsx";
+import { ThemeContextProvider } from "@/contexts/ThemeContextProvider.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(

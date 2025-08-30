@@ -10,7 +10,7 @@ export const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
+      className="dark:bg-gray-950 min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
     >
       <div className=" inset-0 opacity-10">
         <div className=" inset-0" style={backgroundStyle}></div>

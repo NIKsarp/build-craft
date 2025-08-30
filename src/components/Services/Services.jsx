@@ -176,7 +176,7 @@ export const Services = () => {
   return (
     <section
       id="services"
-      className="py-20 bg-gradient-to-b from-transparent to-black/20"
+      className="dark:bg-black py-20 bg-gradient-to-b from-transparent to-black/20"
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">

@@ -74,7 +74,7 @@ export const Portfolio = () => {
   return (
     <section
       id="portfolio"
-      className="py-20 bg-gradient-to-b from-black/20 to-transparent"
+      className="py-20 bg-gradient-to-b from-black/20 to-transparent dark:bg-black"
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">

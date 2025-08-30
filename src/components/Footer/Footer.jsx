@@ -91,7 +91,7 @@ export const Footer = () => {
 
   return (
     <footer
-      className={`${theme} dark:bg-black bg-black/40 backdrop-blur-lg border-t border-white/10 bg-blue-950`}
+      className={`${theme} dark:bg-black  backdrop-blur-lg border-t border-white/10 bg-blue-950`}
     >
       <div className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
