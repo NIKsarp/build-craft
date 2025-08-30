@@ -164,12 +164,12 @@ export const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <NavLink
-                    to={link.href}
+                  <a
+                    href={link.href}
                     className="text-gray-300 hover:text-orange-400 transition-colors"
                   >
                     {link.name}
-                  </NavLink>
+                  </a>
                 </li>
               ))}
               <li>

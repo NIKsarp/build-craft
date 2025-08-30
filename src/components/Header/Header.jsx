@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { NavLink } from "react-router";
 import { useTheme } from "@/contexts/ThemeContextProvider";
 
 export const Header = () => {
@@ -66,13 +65,13 @@ export const Header = () => {
 
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <NavLink
+              <a
                 key={item.name}
                 href={item.href}
                 className="text-white hover:text-orange-400 transition-all font-medium hover:scale-110"
               >
                 {item.name}
-              </NavLink>
+              </a>
             ))}
             <button
               onClick={handleConsultationClick}
@@ -130,14 +129,14 @@ export const Header = () => {
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pb-4">
             {navItems.map((item) => (
-              <NavLink
+              <a
                 key={item.name}
                 href={item.href}
                 className="block py-2 text-white hover:text-orange-400 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
-              </NavLink>
+              </a>
             ))}
             <button
               onClick={handleConsultationClick}
