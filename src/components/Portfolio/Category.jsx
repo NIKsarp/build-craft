@@ -46,8 +46,9 @@ export const Category = ({ projects }) => {
             <div className="relative overflow-hidden">
               <img
                 alt={project.title}
+                src={`project-images/${project.src}`}
+                loading="lazy"
                 className="w-full h-64 object-cover"
-                src="https://images.unsplash.com/photo-1572177812156-58036aae439c"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               <div className="absolute bottom-4 left-4 right-4">

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { BlogCard } from "./BlogCard";
 
 export const Blog = () => {
@@ -10,6 +10,7 @@ export const Blog = () => {
       {
         id: 1,
         alt: "Modern eco-friendly building with solar panels and green roof",
+        src: "Architecture.jpg",
         title: "The Future of Sustainable Architecture",
         author: "Prashant Rastogi",
         date: "2025-08-10",
@@ -19,6 +20,7 @@ export const Blog = () => {
       {
         id: 2,
         alt: "Stylish living room with modern furniture and biophilic design elements",
+        src: "Interior Design.jpg",
         title: "Top 5 Interior Design Trends for 2025",
         author: "Prashant Rastogi",
         date: "2025-08-05",
@@ -28,6 +30,7 @@ export const Blog = () => {
       {
         id: 3,
         alt: "Structural engineer reviewing blueprints on a construction site",
+        src: "Structure.jpg",
         title: "Why Structural Engineering is Crucial for Your Project",
         author: "Prashant Rastogi",
         date: "2025-08-01",
@@ -63,6 +66,7 @@ export const Blog = () => {
             <BlogCard
               key={post.id}
               alt={post.alt}
+              src={post.src}
               title={post.title}
               author={post.author}
               date={post.date}

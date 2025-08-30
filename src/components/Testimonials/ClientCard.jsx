@@ -1,4 +1,4 @@
-export const ClientCard = ({ name, role, location, rating, text }) => {
+export const ClientCard = ({ name, src, role, location, rating, text }) => {
   return (
     <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:border-orange-400/50 transition-all duration-300 relative hover:scale-102">
       <div className="absolute top-6 right-6 h-8 w-8 text-orange-400/30">
@@ -21,8 +21,9 @@ export const ClientCard = ({ name, role, location, rating, text }) => {
       <div className="flex items-center mb-6">
         <img
           alt={name}
+          src={`testimonial-images/${src}`}
+          loading="lazy"
           className="w-16 h-16 rounded-full object-cover mr-4"
-          src="https://images.unsplash.com/photo-1595872018818-97555653a011"
         />
         <div>
           <h4 className="text-xl font-bold text-white">{name}</h4>

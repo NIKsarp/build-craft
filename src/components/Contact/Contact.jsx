@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -153,7 +153,7 @@ export const Contact = () => {
             </h3>
 
             {contactInfo.map((info, index) => (
-              <div key={info.title} className="flex items-start space-x-4">
+              <div key={index} className="flex items-start space-x-4">
                 <div className={`${info.color} bg-white/10 p-3 rounded-xl`}>
                   <info.icon />
                 </div>
@@ -173,8 +173,9 @@ export const Contact = () => {
             <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
               <img
                 alt="Office location map"
+                loading="lazy"
+                src="body/building.jpg"
                 className="w-full h-64 object-cover rounded-xl"
-                src="https://images.unsplash.com/photo-1689712563179-9e5195291439"
               />
             </div>
           </div>

@@ -118,7 +118,7 @@ export const About = () => {
 
             <div className="grid grid-cols-2 gap-8 mt-12">
               {stats.map((stat, index) => (
-                <div key={stat.label} className="text-center">
+                <div key={index} className="text-center">
                   <div className="bg-gradient-to-r from-orange-500 to-red-500 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4">
                     <stat.icon />
                   </div>

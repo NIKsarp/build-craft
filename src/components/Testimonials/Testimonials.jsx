@@ -5,6 +5,7 @@ export const Testimonials = () => {
     {
       id: 1,
       name: "Rajesh Sharma",
+      src: "rajesh-sharma.jpg",
       role: "Homeowner",
       location: "Gurgaon",
       rating: 5,
@@ -14,6 +15,7 @@ export const Testimonials = () => {
     {
       id: 2,
       name: "Priya Agarwal",
+      src: "priya-agarwal.jpg",
       role: "Interior Designer",
       location: "Delhi",
       rating: 5,
@@ -23,6 +25,7 @@ export const Testimonials = () => {
     {
       id: 3,
       name: "Amit Kumar",
+      src: "amit-kumar.jpg",
       role: "Business Owner",
       location: "Noida",
       rating: 5,
@@ -32,6 +35,7 @@ export const Testimonials = () => {
     {
       id: 4,
       name: "Sunita Devi",
+      src: "sunita-devi.jpg",
       role: "Homeowner",
       location: "Faridabad",
       rating: 5,
@@ -61,6 +65,7 @@ export const Testimonials = () => {
             <ClientCard
               key={testimonial.id}
               name={testimonial.name}
+              src={testimonial.src}
               role={testimonial.role}
               location={testimonial.location}
               rating={testimonial.rating}

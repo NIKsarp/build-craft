@@ -103,8 +103,9 @@ export const Hero = () => {
           <div className="relative z-10">
             <img
               alt="Modern construction site with architectural blueprints"
+              src="body/architect-of-building.jpg"
+              loading="lazy"
               className="rounded-2xl shadow-2xl"
-              src="https://images.unsplash.com/photo-1686358244570-631340cbbd22"
             />
           </div>
 

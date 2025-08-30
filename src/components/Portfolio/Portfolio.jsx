@@ -10,6 +10,7 @@ export const Portfolio = () => {
       year: "2023",
       description:
         "5000 sq ft luxury villa with modern architecture and premium interiors.",
+      src: "Villa.jpg",
       image:
         "Modern luxury villa with contemporary architecture and landscaping",
     },
@@ -21,6 +22,7 @@ export const Portfolio = () => {
       year: "2023",
       description:
         "50,000 sq ft commercial complex with sustainable design features.",
+      src: "Office.jpg",
       image:
         "Modern corporate office building with glass facade and green spaces",
     },
@@ -32,6 +34,7 @@ export const Portfolio = () => {
       year: "2024",
       description:
         "3BHK apartment complete interior design with contemporary style.",
+      src: "Apartment.jpg",
       image: "Luxurious apartment interior with modern furniture and lighting",
     },
     {
@@ -41,6 +44,7 @@ export const Portfolio = () => {
       location: "Faridabad, Haryana",
       year: "2022",
       description: "2 lakh sq ft shopping mall with multi-level parking.",
+      src: "Mall.jpg",
       image:
         "Large shopping mall construction with modern architectural design",
     },
@@ -51,6 +55,7 @@ export const Portfolio = () => {
       location: "Greater Noida",
       year: "2023",
       description: "100+ units residential township with all modern amenities.",
+      src: "Town.jpg",
       image: "Residential township with multiple buildings and green spaces",
     },
     {
@@ -60,6 +65,7 @@ export const Portfolio = () => {
       location: "Mumbai",
       year: "2024",
       description: "Fine dining restaurant interior with elegant ambiance.",
+      src: "Restaurant.jpg",
       image:
         "Elegant restaurant interior with sophisticated lighting and decor",
     },

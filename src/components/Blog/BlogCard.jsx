@@ -1,4 +1,12 @@
-export const BlogCard = ({ alt, title, author, date, excerpt, onReadMore }) => {
+export const BlogCard = ({
+  alt,
+  src,
+  title,
+  author,
+  date,
+  excerpt,
+  onReadMore,
+}) => {
   const formattedDate = new Date(date).toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
@@ -10,8 +18,9 @@ export const BlogCard = ({ alt, title, author, date, excerpt, onReadMore }) => {
       <div className="relative overflow-hidden">
         <img
           alt={alt}
+          src={`blog-images/${src}`}
+          loading="lazy"
           className="w-full h-64 object-cover"
-          src="https://images.unsplash.com/photo-1595872018818-97555653a011"
         />
       </div>
 
