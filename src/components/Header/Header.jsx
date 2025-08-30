@@ -30,7 +30,7 @@ export const Header = () => {
 
   return (
     <header
-      className={`${theme} dark:bg-black fixed top-0 w-full z-50 bg-white/10 backdrop-blur-lg border-b border-white/20 `}
+      className={`${theme} dark:bg-black/80 fixed top-0 w-full z-50 bg-white/10 backdrop-blur-lg border-b border-white/20  dark:backdrop:blur-2xl dark:backdrop:saturate-200`}
     >
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
