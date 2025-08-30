@@ -21,7 +21,7 @@ export const Footer = () => {
 
   const socialLinks = [
     {
-      icon: () => (
+      icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"
@@ -37,7 +37,7 @@ export const Footer = () => {
       name: "Facebook",
     },
     {
-      icon: () => (
+      icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"
@@ -53,7 +53,7 @@ export const Footer = () => {
       name: "Twitter",
     },
     {
-      icon: () => (
+      icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"
@@ -69,7 +69,7 @@ export const Footer = () => {
       name: "Instagram",
     },
     {
-      icon: () => (
+      icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"
@@ -137,7 +137,7 @@ export const Footer = () => {
                   href={social.href}
                   className="bg-white/10 p-2 rounded-lg text-white hover:text-orange-400 transition-colors hover:scale-110"
                 >
-                  <social.icon />
+                  {social.icon}
                 </NavLink>
               ))}
             </div>

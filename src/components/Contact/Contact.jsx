@@ -43,7 +43,7 @@ export const Contact = () => {
 
   const contactInfo = [
     {
-      icon: () => (
+      icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -63,7 +63,7 @@ export const Contact = () => {
       color: "text-green-400",
     },
     {
-      icon: () => (
+      icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -84,7 +84,7 @@ export const Contact = () => {
       color: "text-blue-400",
     },
     {
-      icon: () => (
+      icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -105,7 +105,7 @@ export const Contact = () => {
       color: "text-red-400",
     },
     {
-      icon: () => (
+      icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -155,7 +155,7 @@ export const Contact = () => {
             {contactInfo.map((info, index) => (
               <div key={index} className="flex items-start space-x-4">
                 <div className={`${info.color} bg-white/10 p-3 rounded-xl`}>
-                  <info.icon />
+                  {info.icon}
                 </div>
                 <div>
                   <h4 className="text-xl font-semibold text-white mb-2">

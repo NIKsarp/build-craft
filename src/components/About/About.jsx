@@ -1,7 +1,9 @@
+import { Images } from "./Images";
+
 export const About = () => {
   const stats = [
     {
-      icon: () => (
+      icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="32"
@@ -21,7 +23,7 @@ export const About = () => {
       label: "Years of Experience",
     },
     {
-      icon: () => (
+      icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="32"
@@ -43,7 +45,7 @@ export const About = () => {
       label: "Happy Clients",
     },
     {
-      icon: () => (
+      icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="32"
@@ -63,7 +65,7 @@ export const About = () => {
       label: "On-Time Delivery",
     },
     {
-      icon: () => (
+      icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="32"
@@ -120,7 +122,7 @@ export const About = () => {
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
                   <div className="bg-gradient-to-r from-orange-500 to-red-500 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <stat.icon />
+                    {stat.icon}
                   </div>
                   <div className="text-3xl font-bold text-orange-400 mb-2">
                     {stat.number}
@@ -132,34 +134,10 @@ export const About = () => {
           </div>
 
           <div className="relative">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-4">
-                <img
-                  alt="Construction team working on site"
-                  className="rounded-2xl shadow-xl"
-                  src="https://images.unsplash.com/photo-1572891458752-1fde7b8074b6"
-                />
-                <img
-                  alt="Modern architectural design"
-                  className="rounded-2xl shadow-xl"
-                  src="https://images.unsplash.com/photo-1614628303608-ceb2406847e3"
-                />
-              </div>
-              <div className="space-y-4 mt-8">
-                <img
-                  alt="Interior design showcase"
-                  className="rounded-2xl shadow-xl"
-                  src="https://images.unsplash.com/photo-1684776441148-01a6ddc5f202"
-                />
-                <img
-                  alt="Structural engineering blueprints"
-                  className="rounded-2xl shadow-xl"
-                  src="https://images.unsplash.com/photo-1697780193285-275d17ecc801"
-                />
-              </div>
-            </div>
+            {/* Images by External Component */}
+            <Images />
 
-            <div className="absolute -top-4 -right-4 bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-full font-bold shadow-xl animate-ping">
+            <div className="absolute -top-4 -right-4 bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-full font-bold shadow-xl">
               ISO Certified
             </div>
           </div>
