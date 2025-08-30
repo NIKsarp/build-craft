@@ -1,10 +1,19 @@
+import { useToast } from "@/contexts/ToastContextProvider";
+
 export const Hero = () => {
   const backgroundStyle = {
     backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
   };
 
-  const handleButtonClick = () => {
-    alert("This feature will be implemented soon!");
+  const { addToast } = useToast();
+
+  const handleClick = () => {
+    addToast({
+      title: "Starting Project...",
+      description: "We'll soon start a project.",
+      variant: "warning",
+      duration: 3000,
+    });
   };
 
   return (
@@ -55,7 +64,7 @@ export const Hero = () => {
 
           <div className="flex flex-col sm:flex-row gap-4">
             <button
-              onClick={handleButtonClick}
+              onClick={handleClick}
               className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white text-lg px-8 py-4 rounded-md transition-colors flex items-center"
             >
               Start a Project
@@ -76,7 +85,7 @@ export const Hero = () => {
               </svg>
             </button>
             <button
-              onClick={handleButtonClick}
+              onClick={handleClick}
               className="border border-white text-white hover:bg-white hover:text-gray-900 text-lg px-8 py-4 rounded-md transition-colors"
             >
               View Portfolio

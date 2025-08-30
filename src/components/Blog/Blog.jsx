@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { BlogCard } from "./BlogCard";
+import { useToast } from "@/contexts/ToastContextProvider";
 
 export const Blog = () => {
   const [posts, setPosts] = useState([]);
@@ -41,8 +42,15 @@ export const Blog = () => {
     setPosts(storedPosts.length > 0 ? storedPosts.slice(0, 3) : samplePosts);
   }, []);
 
-  const handleReadMore = () => {
-    alert("A full blog page can be created in the next step.");
+  const { addToast } = useToast();
+
+  const handleClick = () => {
+    addToast({
+      title: "Read More",
+      description: `This is a full blog page.`,
+      variant: "success",
+      duration: 3000,
+    });
   };
 
   return (
@@ -71,7 +79,7 @@ export const Blog = () => {
               author={post.author}
               date={post.date}
               excerpt={post.excerpt}
-              onReadMore={handleReadMore}
+              onClick={handleClick}
             />
           ))}
         </div>

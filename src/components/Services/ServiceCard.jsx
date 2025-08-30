@@ -1,6 +1,15 @@
+import { useToast } from "@/contexts/ToastContextProvider";
+
 export const ServiceCard = ({ icon, title, text, features }) => {
+  const { addToast } = useToast();
+
   const handleServiceClick = (serviceName) => {
-    alert(`Learn more about ${serviceName} feature will be implemented soon!`);
+    addToast({
+      title: "Learn more",
+      description: `Learn more about ${serviceName} feature will be implemented soon!`,
+      variant: "success",
+      duration: 3000,
+    });
   };
 
   return (

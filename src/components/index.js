@@ -8,4 +8,3 @@ export { Testimonials } from "@/components/Testimonials/Testimonials.jsx";
 export { Contact } from "@/components/Contact/Contact.jsx";
 export { Services } from "@/components/Services/Services.jsx";
 export { NotFoundPage } from "@/components/NotFoundPage/NotFoundPage.jsx";
-// export { Toaster } from "@/components/Toaster/Toaster.jsx";

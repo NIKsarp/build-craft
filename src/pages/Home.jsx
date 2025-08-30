@@ -6,7 +6,6 @@ import {
   Blog,
   Testimonials,
   Contact,
-  //  Toaster,
 } from "@/components/index.js";
 import { useTheme } from "@/contexts/ThemeContextProvider";
 import { Helmet } from "react-helmet";

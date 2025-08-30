@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useToast } from "@/contexts/ToastContextProvider";
 
 export const Category = ({ projects }) => {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -15,8 +16,15 @@ export const Category = ({ projects }) => {
       ? projects
       : projects.filter((project) => project.category === activeCategory);
 
-  const handleProjectClick = (projectTitle) => {
-    alert(`View details for ${projectTitle} feature will be implemented soon!`);
+  const { addToast } = useToast();
+
+  const handleClick = (projectTitle) => {
+    addToast({
+      title: "View Details",
+      description: `View details for ${projectTitle} feature will be implemented soon!`,
+      variant: "success",
+      duration: 3000,
+    });
   };
 
   return (
@@ -102,7 +110,7 @@ export const Category = ({ projects }) => {
               </p>
 
               <button
-                onClick={() => handleProjectClick(project.title)}
+                onClick={() => handleClick(project.title)}
                 className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center"
               >
                 <div className="h-4 w-4 mr-2">

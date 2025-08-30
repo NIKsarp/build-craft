@@ -5,7 +5,7 @@ export const BlogCard = ({
   author,
   date,
   excerpt,
-  onReadMore,
+  onClick,
 }) => {
   const formattedDate = new Date(date).toLocaleDateString("en-US", {
     year: "numeric",
@@ -70,7 +70,7 @@ export const BlogCard = ({
         <p className="text-gray-300 mb-6 leading-relaxed">{excerpt}</p>
 
         <button
-          onClick={onReadMore}
+          onClick={onClick}
           className="mt-auto w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center"
         >
           Read More

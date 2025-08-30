@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTheme } from "@/contexts/ThemeContextProvider";
+import { useToast } from "@/contexts/ToastContextProvider";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,9 +14,18 @@ export const Header = () => {
     { name: "Contact", href: "#contact" },
   ];
 
-  const handleConsultationClick = () => {
-    alert("Free consultation feature will be implemented soon!");
+  const { addToast } = useToast();
+
+  const handleClick = () => {
+    addToast({
+      title: "Consultation Requested!",
+      description:
+        "We'll contact you shortly to schedule your free consultation.",
+      variant: "success",
+      duration: 3000,
+    });
   };
+
   const { theme, setTheme } = useTheme();
 
   const toggleTheme = () => {
@@ -74,7 +84,7 @@ export const Header = () => {
               </a>
             ))}
             <button
-              onClick={handleConsultationClick}
+              onClick={handleClick}
               className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-4 py-2 rounded-md transition-colors"
             >
               Free Consultation
@@ -139,7 +149,7 @@ export const Header = () => {
               </a>
             ))}
             <button
-              onClick={handleConsultationClick}
+              onClick={handleClick}
               className="mt-4 w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-4 py-2 rounded-md transition-colors"
             >
               Free Consultation
