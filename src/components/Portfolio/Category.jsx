@@ -29,15 +29,15 @@ export const Category = ({ projects }) => {
 
   return (
     <>
-      <div className="flex flex-wrap justify-center gap-4 mb-12">
+      <div className="portfolio__categories flex flex-wrap justify-center gap-4 mb-12">
         {categories.map((category) => (
           <button
             key={category.id}
             onClick={() => setActiveCategory(category.id)}
-            className={`px-6 py-2 rounded-md transition-colors ${
+            className={`portfolio__category-btn px-6 py-2 rounded-md transition-colors ${
               activeCategory === category.id
-                ? "bg-gradient-to-r from-orange-500 to-red-500 text-white"
-                : "border border-white text-white hover:bg-white hover:text-gray-900"
+                ? "portfolio__category-btn--active bg-gradient-to-r from-orange-500 to-red-500 text-white"
+                : "portfolio__category-btn--inactive border border-white text-white hover:bg-white hover:text-gray-900"
             }`}
           >
             {category.name}
@@ -45,23 +45,23 @@ export const Category = ({ projects }) => {
         ))}
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="portfolio__projects-grid grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {filteredProjects.map((project) => (
           <div
             key={project.id}
-            className="bg-white/10 backdrop-blur-lg rounded-2xl overflow-hidden border border-white/20 hover:border-orange-400/50 transition-all duration-300 hover:scale-105"
+            className="portfolio__project-card bg-white/10 backdrop-blur-lg rounded-2xl overflow-hidden border border-white/20 hover:border-orange-400/50 transition-all duration-300 hover:scale-105"
           >
-            <div className="relative overflow-hidden">
+            <div className="portfolio__project-image-container relative overflow-hidden">
               <img
                 alt={project.title}
                 src={`project-images/${project.src}`}
                 loading="lazy"
-                className="w-full h-64 object-cover"
+                className="portfolio__project-image w-full h-64 object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-              <div className="absolute bottom-4 left-4 right-4">
-                <div className="flex items-center text-white text-sm mb-2">
-                  <div className="h-4 w-4 mr-2">
+              <div className="portfolio__project-image-overlay absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div className="portfolio__project-meta absolute bottom-4 left-4 right-4">
+                <div className="portfolio__project-meta-info flex items-center text-white text-sm mb-2">
+                  <div className="portfolio__project-meta-icon h-4 w-4 mr-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -80,7 +80,7 @@ export const Category = ({ projects }) => {
                     </svg>
                   </div>
                   {project.year}
-                  <div className="h-4 w-4 ml-4 mr-2">
+                  <div className="portfolio__project-meta-icon h-4 w-4 ml-4 mr-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -101,19 +101,19 @@ export const Category = ({ projects }) => {
               </div>
             </div>
 
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-white mb-3">
+            <div className="portfolio__project-content p-6">
+              <h3 className="portfolio__project-title text-xl font-bold text-white mb-3">
                 {project.title}
               </h3>
-              <p className="text-gray-300 mb-4 leading-relaxed">
+              <p className="portfolio__project-description text-gray-300 mb-4 leading-relaxed">
                 {project.description}
               </p>
 
               <button
                 onClick={() => handleClick(project.title)}
-                className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center"
+                className="portfolio__project-button w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center"
               >
-                <div className="h-4 w-4 mr-2">
+                <div className="portfolio__project-button-icon h-4 w-4 mr-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -125,7 +125,7 @@ export const Category = ({ projects }) => {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   >
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2极6" />
                     <polyline points="15 3 21 3 21 9" />
                     <line x1="10" y1="14" x2="21" y2="3" />
                   </svg>

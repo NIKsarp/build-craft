@@ -74,17 +74,17 @@ export const Portfolio = () => {
   return (
     <section
       id="portfolio"
-      className="py-20 bg-gradient-to-b from-black/20 to-transparent dark:bg-black"
+      className="portfolio-section py-20 bg-gradient-to-b from-black/20 to-transparent dark:bg-black"
     >
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6">
+      <div className="portfolio-section__container container mx-auto px-4">
+        <div className="portfolio-section__header text-center mb-16">
+          <h2 className="portfolio-section__title text-4xl lg:text-6xl font-bold text-white mb-6">
             Our{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
+            <span className="portfolio-section__title-accent text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
               Portfolio
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="portfolio-section__description text-xl text-gray-300 max-w-3xl mx-auto">
             Check out our successful projects that are a perfect example of
             quality and innovation.
           </p>

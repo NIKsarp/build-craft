@@ -45,22 +45,22 @@ export const Testimonials = () => {
   ];
 
   return (
-    <section className="py-20 dark:bg-gray-950">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6">
+    <section className="testimonials-section py-20 dark:bg-gray-950">
+      <div className="testimonials-section__container container mx-auto px-4">
+        <div className="testimonials-section__header text-center mb-16">
+          <h2 className="testimonials-section__title text-4xl lg:text-6xl font-bold text-white mb-6">
             Client{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
+            <span className="testimonials-section__title-accent text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
               Testimonials
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="testimonials-section__description text-xl text-gray-300 max-w-3xl mx-auto">
             What our satisfied clients say about our services.
           </p>
         </div>
 
         {/* Testimonials Card */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="testimonials-section__grid grid md:grid-cols-2 lg:grid-cols-2 gap-8">
           {testimonials.map((testimonial) => (
             <ClientCard
               key={testimonial.id}
@@ -74,29 +74,39 @@ export const Testimonials = () => {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-orange-400 mb-2">
+        <div className="testimonials-section__stats mt-16 text-center">
+          <div className="testimonials-section__stats-grid grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="testimonials-section__stat-item text-center">
+              <div className="testimonials-section__stat-number text-4xl font-bold text-orange-400 mb-2">
                 4.9/5
               </div>
-              <div className="text-gray-300">Average Rating</div>
+              <div className="testimonials-section__stat-label text-gray-300">
+                Average Rating
+              </div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-orange-400 mb-2">
+            <div className="testimonials-section__stat-item text-center">
+              <div className="testimonials-section__stat-number text-4xl font-bold text-orange-400 mb-2">
                 500+
               </div>
-              <div className="text-gray-300">Happy Clients</div>
+              <div className="testimonials-section__stat-label text-gray-300">
+                Happy Clients
+              </div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-orange-400 mb-2">
+            <div className="testimonials-section__stat-item text-center">
+              <div className="testimonials-section__stat-number text-4xl font-bold text-orange-400 mb-2">
                 100%
               </div>
-              <div className="text-gray-300">Project Success</div>
+              <div className="testimonials-section__stat-label text-gray-300">
+                Project Success
+              </div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-orange-400 mb-2">15+</div>
-              <div className="text-gray-300">Years Experience</div>
+            <div className="testimonials-section__stat-item text-center">
+              <div className="testimonials-section__stat-number text-4xl font-bold text-orange-400 mb-2">
+                15+
+              </div>
+              <div className="testimonials-section__stat-label text-gray-300">
+                Years Experience
+              </div>
             </div>
           </div>
         </div>

@@ -42,12 +42,12 @@ export const Header = () => {
 
   return (
     <header
-      className={`${theme} dark:bg-black/80 fixed top-0 w-full z-50 bg-white/10 backdrop-blur-lg border-b border-white/20  dark:backdrop:blur-2xl dark:backdrop:saturate-200`}
+      className={`header ${theme} dark:bg-black/80 fixed top-0 w-full z-50 bg-white/10 backdrop-blur-lg border-b border-white/20  dark:backdrop:blur-2xl dark:backdrop:saturate-200`}
     >
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2 hover:scale-105 transition-transform">
-            <div className="h-8 w-8 text-orange-400">
+      <div className="header__container container mx-auto px-4 py-4">
+        <div className="header__inner flex items-center justify-between">
+          <div className="header__logo flex items-center space-x-2 hover:scale-105 transition-transform">
+            <div className="header__logo-icon h-8 w-8 text-orange-400">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
@@ -72,28 +72,30 @@ export const Header = () => {
                 <path d="M8 14h.01" />
               </svg>
             </div>
-            <span className="text-2xl font-bold text-white">BuildCraft</span>
+            <span className="header__logo-text text-2xl font-bold text-white">
+              BuildCraft
+            </span>
           </div>
 
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="header__nav header__nav--desktop hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-white hover:text-orange-400 transition-all font-medium hover:scale-110"
+                className="header__nav-link text-white hover:text-orange-400 transition-all font-medium hover:scale-110"
               >
                 {item.name}
               </a>
             ))}
             <button
               onClick={handleClick}
-              className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-4 py-2 rounded-md transition-colors"
+              className="header__cta-button bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-4 py-2 rounded-md transition-colors"
             >
               Free Consultation
             </button>
             <button
               onClick={toggleTheme}
-              className={`bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white  px-4 py-2 rounded-2xl cursor-pointer`}
+              className={`header__theme-toggle bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white  px-4 py-2 rounded-2xl cursor-pointer`}
             >
               DarkMode
             </button>
@@ -101,7 +103,7 @@ export const Header = () => {
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-white"
+            className="header__menu-toggle md:hidden text-white"
           >
             {isMenuOpen ? (
               <svg
@@ -139,12 +141,12 @@ export const Header = () => {
         </div>
 
         {isMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4">
+          <nav className="header__nav header__nav--mobile md:hidden mt-4 pb-4">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="block py-2 text-white hover:text-orange-400 transition-colors"
+                className="header__nav-link header__nav-link--mobile block py-2 text-white hover:text-orange-400 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
@@ -152,13 +154,13 @@ export const Header = () => {
             ))}
             <button
               onClick={handleClick}
-              className="mt-4 w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-4 py-2 rounded-md transition-colors"
+              className="header__cta-button header__cta-button--mobile mt-4 w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-4 py-2 rounded-md transition-colors"
             >
               Free Consultation
             </button>
             <button
               onClick={toggleTheme}
-              className={`mt-4 w-full  bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white  px-4 py-2 rounded-2xl cursor-pointer`}
+              className={`header__theme-toggle header__theme-toggle--mobile mt-4 w-full  bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white  px-4 py-2 rounded-2xl cursor-pointer`}
             >
               DarkMode
             </button>

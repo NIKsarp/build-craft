@@ -86,58 +86,63 @@ export const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 dark:bg-gray-950">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <h2 className="text-4xl lg:text-6xl font-bold text-white mb-8">
+    <section id="about" className="about-section py-20 dark:bg-gray-950">
+      <div className="about-section__container container mx-auto px-4">
+        <div className="about-section__grid grid lg:grid-cols-2 gap-16 items-center">
+          <div className="about-section__content">
+            <h2 className="about-section__title text-4xl lg:text-6xl font-bold text-white mb-8">
               About{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
+              <span className="about-section__title-accent text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
                 Us
               </span>
             </h2>
 
-            <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
-              <p>
+            <div className="about-section__text space-y-6 text-gray-300 text-lg leading-relaxed">
+              <p className="about-section__paragraph">
                 BuildCraft Solutions is a leading construction company providing
                 quality services for over 15 years. Our expert team has deep
                 expertise in civil engineering, architecture, and interior
                 design.
               </p>
 
-              <p>
+              <p className="about-section__paragraph">
                 We combine the latest technology with traditional craftsmanship
                 to deliver exceptional results. Our mission is to turn every
                 client's dream into a reality.
               </p>
 
-              <p>
+              <p className="about-section__paragraph">
                 Quality, transparency, and customer satisfaction are our core
                 values. We treat every project as our own and work with complete
                 dedication.
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-8 mt-12">
+            <div className="about-section__stats-grid grid grid-cols-2 gap-8 mt-12">
               {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="bg-gradient-to-r from-orange-500 to-red-500 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <div
+                  key={index}
+                  className="about-section__stat-item text-center"
+                >
+                  <div className="about-section__stat-icon bg-gradient-to-r from-orange-500 to-red-500 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4">
                     {stat.icon}
                   </div>
-                  <div className="text-3xl font-bold text-orange-400 mb-2">
+                  <div className="about-section__stat-number text-3xl font-bold text-orange-400 mb-2">
                     {stat.number}
                   </div>
-                  <div className="text-gray-300">{stat.label}</div>
+                  <div className="about-section__stat-label text-gray-300">
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="relative">
+          <div className="about-section__images-container relative">
             {/* Images by External Component */}
             <Images />
 
-            <div className="absolute -top-4 -right-4 bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-full font-bold shadow-xl">
+            <div className="about-section__badge absolute -top-4 -right-4 bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-full font-bold shadow-xl">
               ISO Certified
             </div>
           </div>

@@ -39,8 +39,6 @@ export const Contact = () => {
     submissions.push(newSubmission);
     localStorage.setItem("contactSubmissions", JSON.stringify(submissions));
 
-    // alert("Message Sent! 🎉\nWe will get back to you shortly. Thank you!");
-
     setFormData({
       name: "",
       email: "",
@@ -64,7 +62,7 @@ export const Contact = () => {
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 极 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
         </svg>
       ),
       title: "Phone Number",
@@ -84,18 +82,18 @@ export const Contact = () => {
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+          <path d="M4 4极16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
           <polyline points="22,6 12,13 2,6" />
         </svg>
       ),
       title: "Email",
       details: ["info@buildcraft.com", "projects@buildcraft.com"],
-      color: "text-blue-400",
+      color: "极text-blue-400",
     },
     {
       icon: (
         <svg
-          xmlns="http://www.w3.org/2000/svg"
+          xmlns="http://www.w3.org/2000/s极"
           width="24"
           height="24"
           viewBox="0 0 24 24"
@@ -136,44 +134,50 @@ export const Contact = () => {
     },
   ];
 
-  // };
-
   return (
     <section
       id="contact"
-      className="py-20 bg-gradient-to-b from-black/20 to-transparent dark:bg-gray-950"
+      className="contact-section py-20 bg-gradient-to-b from-black/20 to-transparent dark:bg-gray-950"
     >
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6">
+      <div className="contact-section__container container mx-auto px-4">
+        <div className="contact-section__header text-center mb-16">
+          <h2 className="contact-section__title text-4xl lg:text-6xl font-bold text-white mb-6">
             Contact{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
+            <span className="contact-section__title-accent text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
               Us
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="contact-section__description text-xl text-gray-300 max-w-3xl mx-auto">
             Get a free consultation for your project. Our expert team is ready
             to help you.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
-          <div className="space-y-8">
-            <h3 className="text-3xl font-bold text-white mb-8">
+        <div className="contact-section__grid grid lg:grid-cols-2 gap-16">
+          <div className="contact-section__info space-y-8">
+            <h3 className="contact-section__info-title text-3xl font-bold text-white mb-8">
               Contact Information
             </h3>
 
             {contactInfo.map((info, index) => (
-              <div key={index} className="flex items-start space-x-4">
-                <div className={`${info.color} bg-white/10 p-3 rounded-xl`}>
+              <div
+                key={index}
+                className="contact-section__info-item flex items-start space-x-4"
+              >
+                <div
+                  className={`contact-section__info-icon ${info.color} bg-white/10 p-3 rounded-xl`}
+                >
                   {info.icon}
                 </div>
-                <div>
-                  <h4 className="text-xl font-semibold text-white mb-2">
+                <div className="contact-section__info-content">
+                  <h4 className="contact-section__info-heading text-xl font-semibold text-white mb-2">
                     {info.title}
                   </h4>
                   {info.details.map((detail, i) => (
-                    <p key={i} className="text-gray-300">
+                    <p
+                      key={i}
+                      className="contact-section__info-detail text-gray-300"
+                    >
                       {detail}
                     </p>
                   ))}
@@ -181,25 +185,28 @@ export const Contact = () => {
               </div>
             ))}
 
-            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
+            <div className="contact-section__map bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
               <img
                 alt="Office location map"
                 loading="lazy"
                 src="body/building.jpg"
-                className="w-full h-64 object-cover rounded-xl"
+                className="contact-section__map-image w-full h-64 object-cover rounded-xl"
               />
             </div>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20">
-            <h3 className="text-3xl font-bold text-white mb-8">
+          <div className="contact-section__form-container bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20">
+            <h3 className="contact-section__form-title text-3xl font-bold text-white mb-8">
               Book a Free Consultation
             </h3>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-white font-medium mb-2">
+            <form
+              onSubmit={handleSubmit}
+              className="contact-section__form space-y-6"
+            >
+              <div className="contact-section__form-row grid md:grid-cols-2 gap-6">
+                <div className="contact-section__form-group">
+                  <label className="contact-section__form-label block text-white font-medium mb-2">
                     Name *
                   </label>
                   <input
@@ -208,12 +215,12 @@ export const Contact = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-orange-400"
+                    className="contact-section__form-input w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-orange-400"
                     placeholder="Your Name"
                   />
                 </div>
-                <div>
-                  <label className="block text-white font-medium mb-2">
+                <div className="contact-section__form-group">
+                  <label className="contact-section__form-label block text-white font-medium mb-2">
                     Phone Number *
                   </label>
                   <input
@@ -222,14 +229,14 @@ export const Contact = () => {
                     value={formData.phone}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-orange-400"
+                    className="contact-section__form-input w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-orange-400"
                     placeholder="+91 98765 43210"
                   />
                 </div>
               </div>
 
-              <div>
-                <label className="block text-white font-medium mb-2">
+              <div className="contact-section__form-group">
+                <label className="contact-section__form-label block text-white font-medium mb-2">
                   Email
                 </label>
                 <input
@@ -237,13 +244,13 @@ export const Contact = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-orange-400"
+                  className="contact-section__form-input w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-orange-400"
                   placeholder="your@email.com"
                 />
               </div>
 
-              <div>
-                <label className="block text-white font-medium mb-2">
+              <div className="contact-section__form-group">
+                <label className="contact-section__form-label block text-white font-medium mb-2">
                   Select Service *
                 </label>
                 <select
@@ -251,7 +258,7 @@ export const Contact = () => {
                   value={formData.service}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:border-orange-400"
+                  className="contact-section__form-select w-full px-4 py-3 bg-white/极0 border border-white/20 rounded-xl text-white focus:outline-none focus:border-orange-400"
                 >
                   <option value="">Select a service</option>
                   <option value="civil">Civil Engineering</option>
@@ -263,8 +270,8 @@ export const Contact = () => {
                 </select>
               </div>
 
-              <div>
-                <label className="block text-white font-medium mb-2">
+              <div className="contact-section__form-group">
+                <label className="contact-section__form-label block text-white font-medium mb-2">
                   Message
                 </label>
                 <textarea
@@ -272,16 +279,16 @@ export const Contact = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   rows={4}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-orange-400 resize-none"
+                  className="contact-section__form-textarea w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-orange-400 resize-none"
                   placeholder="Tell us about your project..."
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white text-lg py-4 px-6 rounded-xl transition-colors flex items-center justify-center"
+                className="contact-section__submit-button w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white text-lg py-4 px-6 rounded-xl transition-colors flex items-center justify-center"
               >
-                <div className="h-5 w-5 mr-2">
+                <div className="contact-section__submit-icon h-5 w-5 mr-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"

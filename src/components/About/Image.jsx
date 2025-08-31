@@ -4,7 +4,7 @@ export const Image = ({ alt, src }) => {
       alt={alt}
       src={`about-us-images/${src}`}
       loading="lazy"
-      className="rounded-2xl shadow-xl"
+      className="about-us__image rounded-2xl shadow-xl"
     />
   );
 };

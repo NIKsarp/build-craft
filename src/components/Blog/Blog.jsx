@@ -54,22 +54,22 @@ export const Blog = () => {
   };
 
   return (
-    <section id="blog" className="py-20 dark:bg-gray-950">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6">
+    <section id="blog" className="blog-section py-20 dark:bg-gray-950">
+      <div className="blog-section__container container mx-auto px-4">
+        <div className="blog-section__header text-center mb-16">
+          <h2 className="blog-section__title text-4xl lg:text-6xl font-bold text-white mb-6">
             From Our{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
+            <span className="blog-section__title-accent text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
               Blog
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="blog-section__description text-xl text-gray-300 max-w-3xl mx-auto">
             Stay updated with the latest news, trends, and insights from the
             construction and design industry.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="blog-section__grid grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post) => (
             <BlogCard
               key={post.id}

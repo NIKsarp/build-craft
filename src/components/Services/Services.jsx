@@ -176,24 +176,24 @@ export const Services = () => {
   return (
     <section
       id="services"
-      className="dark:bg-black py-20 bg-gradient-to-b from-transparent to-black/20"
+      className="services-section dark:bg-black py-20 bg-gradient-to-b from-transparent to-black/20"
     >
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6">
+      <div className="services-section__container container mx-auto px-4">
+        <div className="services-section__header text-center mb-16">
+          <h2 className="services-section__title text-4xl lg:text-6xl font-bold text-white mb-6">
             Our{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
+            <span className="services-section__title-accent text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
               Services
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="services-section__description text-xl text-gray-300 max-w-3xl mx-auto">
             From construction to interior design, we are ready to turn your
             every dream into reality.
           </p>
         </div>
 
         {/* Service Card */}
-        <div className="d grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="services-section__grid grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <ServiceCard
               key={index}
