@@ -28,11 +28,13 @@ export const Header = () => {
 
   const { theme, setTheme } = useTheme();
 
-  const toggleTheme = () => {
+  const toggleTheme = (e) => {
     setTheme(() => {
       if (theme === "light") {
+        e.target.innerText = "LightMode";
         return "dark";
       } else {
+        e.target.innerText = "DarkMode";
         return "light";
       }
     });
@@ -153,6 +155,12 @@ export const Header = () => {
               className="mt-4 w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-4 py-2 rounded-md transition-colors"
             >
               Free Consultation
+            </button>
+            <button
+              onClick={toggleTheme}
+              className={`mt-4 w-full  bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white  px-4 py-2 rounded-2xl cursor-pointer`}
+            >
+              DarkMode
             </button>
           </nav>
         )}

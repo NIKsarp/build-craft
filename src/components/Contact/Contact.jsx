@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useToast } from "@/contexts/ToastContextProvider";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,9 +16,17 @@ export const Contact = () => {
       [e.target.name]: e.target.value,
     });
   };
+  const { addToast } = useToast();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    addToast({
+      title: "Message Received",
+      description: `Message Sent! 🎉\nWe will get back to you shortly. Thank you!`,
+      variant: "success",
+      duration: 3000,
+    });
 
     const submissions = JSON.parse(
       localStorage.getItem("contactSubmissions") || "[]"
@@ -30,7 +39,7 @@ export const Contact = () => {
     submissions.push(newSubmission);
     localStorage.setItem("contactSubmissions", JSON.stringify(submissions));
 
-    alert("Message Sent! 🎉\nWe will get back to you shortly. Thank you!");
+    // alert("Message Sent! 🎉\nWe will get back to you shortly. Thank you!");
 
     setFormData({
       name: "",
@@ -127,15 +136,6 @@ export const Contact = () => {
     },
   ];
 
-  // const { addToast } = useToast();
-
-  // const handleClick = (projectTitle) => {
-  //   addToast({
-  //     title: "View Details",
-  //     description: `View details for ${projectTitle} feature will be implemented soon!`,
-  //     variant: "success",
-  //     duration: 3000,
-  //   });
   // };
 
   return (
