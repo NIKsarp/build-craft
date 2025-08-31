@@ -1,4 +1,5 @@
 import { useToast } from "@/contexts/ToastContextProvider";
+import { useState } from "react";
 
 export const Hero = () => {
   const backgroundStyle = {
@@ -6,6 +7,8 @@ export const Hero = () => {
   };
 
   const { addToast } = useToast();
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   const handleClick = () => {
     addToast({
@@ -14,6 +17,15 @@ export const Hero = () => {
       variant: "warning",
       duration: 3000,
     });
+  };
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
+  const handleImageError = () => {
+    setImageError(true);
+    setImageLoaded(true); // Stop showing the placeholder
   };
 
   return (
@@ -110,12 +122,28 @@ export const Hero = () => {
 
         <div className="relative">
           <div className="relative z-10">
-            <img
-              alt="Modern construction site with architectural blueprints"
-              src="body/architect-of-building.jpg"
-              loading="lazy"
-              className="rounded-2xl shadow-2xl"
-            />
+            {/* Image container with placeholder */}
+            <div
+              className={`rounded-2xl shadow-2xl overflow-hidden ${
+                !imageLoaded ? "bg-gray-700 animate-pulse" : ""
+              }`}
+            >
+              {imageError ? (
+                <div className="w-full h-64 bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center text-white">
+                  <span>Image failed to load</span>
+                </div>
+              ) : (
+                <img
+                  alt="Modern construction site with architectural blueprints"
+                  src="/body/architect-of-building.jpg"
+                  onLoad={handleImageLoad}
+                  onError={handleImageError}
+                  className={`rounded-2xl transition-opacity duration-300 ${
+                    imageLoaded ? "opacity-100" : "opacity-0"
+                  }`}
+                />
+              )}
+            </div>
           </div>
 
           <div className="absolute -top-4 -left-4 bg-white/10 backdrop-blur-lg rounded-xl p-4 border border-white/20 animate-bounce">
