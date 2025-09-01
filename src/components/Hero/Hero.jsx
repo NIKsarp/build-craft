@@ -1,5 +1,6 @@
 import { useToast } from "@/contexts/ToastContextProvider";
 import { useState } from "react";
+import { useIntersectionObserver } from "../InterSection";
 
 export const Hero = () => {
   const backgroundStyle = {
@@ -27,6 +28,11 @@ export const Hero = () => {
     setImageError(true);
     setImageLoaded(true); // Stop showing the placeholder
   };
+
+  useIntersectionObserver("hero__title", {
+    threshold: 0.5, // Adjust as needed
+    rootMargin: "0px 0px -100px 0px", // Adjust as needed
+  });
 
   return (
     <section
@@ -106,16 +112,26 @@ export const Hero = () => {
 
           <div className="hero__stats grid grid-cols-3 gap-8 pt-8">
             <div className="hero__stat-item text-center">
-              <div className="hero__stat-number text-3xl font-bold text-orange-400">500+</div>
+              <div className="hero__stat-number text-3xl font-bold text-orange-400">
+                500+
+              </div>
               <div className="hero__stat-label text-gray-300">Projects</div>
             </div>
             <div className="hero__stat-item text-center">
-              <div className="hero__stat-number text-3xl font-bold text-orange-400">15+</div>
-              <div className="hero__stat-label text-gray-300">Years of Experience</div>
+              <div className="hero__stat-number text-3xl font-bold text-orange-400">
+                15+
+              </div>
+              <div className="hero__stat-label text-gray-300">
+                Years of Experience
+              </div>
             </div>
             <div className="hero__stat-item text-center">
-              <div className="hero__stat-number text-3xl font-bold text-orange-400">100%</div>
-              <div className="hero__stat-label text-gray-300">Satisfied Clients</div>
+              <div className="hero__stat-number text-3xl font-bold text-orange-400">
+                100%
+              </div>
+              <div className="hero__stat-label text-gray-300">
+                Satisfied Clients
+              </div>
             </div>
           </div>
         </div>
@@ -147,12 +163,18 @@ export const Hero = () => {
           </div>
 
           <div className="hero__badge-item hero__badge-item--value absolute -top-4 -left-4 bg-white/10 backdrop-blur-lg rounded-xl p-4 border border-white/20 animate-bounce">
-            <div className="hero__badge-number text-orange-400 font-bold text-lg">$5M+</div>
-            <div className="hero__badge-label text-white text-sm">Project Value</div>
+            <div className="hero__badge-number text-orange-400 font-bold text-lg">
+              $5M+
+            </div>
+            <div className="hero__badge-label text-white text-sm">
+              Project Value
+            </div>
           </div>
 
           <div className="hero__badge-item hero__badge-item--support absolute -bottom-4 -right-4 bg-white/10 backdrop-blur-lg rounded-xl p-4 border border-white/20 animate-bounce animation-delay-1000">
-            <div className="hero__badge-number text-orange-400 font-bold text-lg">24/7</div>
+            <div className="hero__badge-number text-orange-400 font-bold text-lg">
+              24/7
+            </div>
             <div className="hero__badge-label text-white text-sm">Support</div>
           </div>
         </div>
